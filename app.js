@@ -6,9 +6,15 @@ app.listen(3333, () => {
 });
 
 
+const rootController = require(`./routes/index`),
+catController = require(`./routes/cat`),
+dogController = require(`./routes/dog`),
+fooController = require(`./routes/foo`);
+
+app.use('/', rootController);
+app.use('/foo', fooController);
+app.use(`/cat`, catController);
+app.use(`/dog`, dogController);
 
 
-
-app.get('/', rootController);
-app.get('/foo', fooController);
 
