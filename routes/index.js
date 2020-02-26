@@ -4,11 +4,15 @@ const express = require('express'),
 console.log(router);
 
 router.get('/', (req,res) => {
-    const snippet = `<h1>Hello World</h1>`;
-    res
-        .status(200)
-        .send(snippet)
-        .end();
+    
+    res.render('template', {
+        locals: {
+            title: 'Hello Worldoo'
+        },
+        partials: {
+            partial: 'partial-index'
+        }
+    })
 })
 
 module.exports = router
