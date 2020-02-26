@@ -1,10 +1,11 @@
 const express = require('express'),
-router = express.Router();
+    router = express.Router();
 
-const rootController = (req, res) => {
-    const snippet = `<h1>Happy Birthday Alan and (belated) Josh!</h1>`;
+router.get('/', (req,rest) => {
+    const snippet = `<h1>Hello World</h1>`;
     res
-      .status(200)
-      .send(snippet)
-      .end();
-  };
+        .status(200)
+        .send(snippet)
+        .end();
+})
+
